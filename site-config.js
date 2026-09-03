@@ -1,10 +1,7 @@
 window.PORTFOLIO_CONFIG = {
-  name: "David Sweeney",
-  initials: "DS",
-  role: "Independent creative",
-  statement: "Images, sound and stories shaped with clarity, rhythm and intent.",
-  location: "Ireland",
-  email: "",
+  siteName: "smug.ie",
+  initials: "S",
+  statement: "A simple space for images, sound and ideas as they develop.",
 
   // Paste a YouTube, Vimeo or direct embed URL when your reel is ready.
   videoUrl: "",

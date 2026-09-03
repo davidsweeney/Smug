@@ -1,10 +1,10 @@
 const config = window.PORTFOLIO_CONFIG || {};
 
-if (config.name) {
-  document.title = document.title.replace("Your Name", config.name);
+if (config.siteName) {
+  document.title = document.title.replace("Smug", config.siteName);
   const description = document.querySelector('meta[name="description"]');
   if (description) {
-    description.content = description.content.replace("Your Name", config.name);
+    description.content = description.content.replace("Smug", config.siteName);
   }
 }
 
@@ -73,7 +73,7 @@ if (videoMount) {
   if (embedUrl) {
     const frame = document.createElement("iframe");
     frame.src = embedUrl;
-    frame.title = `${config.name || "Portfolio"} video`;
+    frame.title = `${config.siteName || "Smug"} video`;
     frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     frame.allowFullscreen = true;
     videoMount.replaceChildren(frame);
