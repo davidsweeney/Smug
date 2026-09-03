@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Selected visual work from Your Name.">
+    <title>Gallery — Your Name</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="site-config.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Portfolio home">
+        <span class="brand-mark" data-bind="initials">YN</span>
+        <span class="brand-name" data-bind="name">Your Name</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation" data-menu-button>Menu</button>
+      <nav class="navigation" id="navigation" aria-label="Main navigation" data-navigation>
+        <a href="index.html" data-nav>Home</a>
+        <a href="gallery.html" data-nav>Gallery</a>
+        <a href="media.html" data-nav>Video &amp; audio</a>
+      </nav>
+    </header>
+
+    <main class="page-shell" id="main">
+      <header class="page-intro">
+        <div>
+          <p class="eyebrow">Selected work · 2026</p>
+          <h1>Gallery</h1>
+        </div>
+        <p class="lede">A developing collection of visual experiments, commissioned work and self-directed projects.</p>
+      </header>
+
+      <section class="gallery-grid" aria-label="Portfolio gallery">
+        <article class="gallery-item" id="motion">
+          <button class="gallery-button" type="button" data-gallery-item data-image="assets/work-motion.webp" data-alt="Abstract blue and orange layered composition" data-title="Motion Study">
+            <img src="assets/work-motion.webp" alt="Abstract blue and orange layered composition" width="1536" height="1024">
+            <div class="card-meta"><h2>Motion Study</h2><p>Image · 2026</p></div>
+          </button>
+        </article>
+        <article class="gallery-item" id="rhythm">
+          <button class="gallery-button" type="button" data-gallery-item data-image="assets/work-rhythm.webp" data-alt="Abstract coral arcs and ivory sound-wave forms on deep blue" data-title="Rhythm Study">
+            <img src="assets/work-rhythm.webp" alt="Abstract coral arcs and ivory sound-wave forms on deep blue" loading="lazy" width="1536" height="1024">
+            <div class="card-meta"><h2>Rhythm Study</h2><p>Image · 2026</p></div>
+          </button>
+        </article>
+        <article class="gallery-item" id="place">
+          <button class="gallery-button" type="button" data-gallery-item data-image="assets/work-place.webp" data-alt="Abstract yellow, blue and black paper landscape" data-title="Place Study">
+            <img src="assets/work-place.webp" alt="Abstract yellow, blue and black paper landscape" loading="lazy" width="1536" height="1024">
+            <div class="card-meta"><h2>Place Study</h2><p>Image · 2026</p></div>
+          </button>
+        </article>
+      </section>
+    </main>
+
+    <dialog class="gallery-dialog" id="gallery-dialog" aria-label="Expanded artwork">
+      <img src="assets/work-motion.webp" alt="">
+      <div class="dialog-bar">
+        <p data-dialog-title>Artwork</p>
+        <button class="dialog-close" type="button" data-close>Close</button>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <p>© <span data-year>2026</span> <span data-bind="name">Your Name</span></p>
+      <p>Portfolio · <span data-bind="location">Ireland</span></p>
+    </footer>
+  </body>
+</html>

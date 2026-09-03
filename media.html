@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Video and audio work from Your Name.">
+    <title>Video &amp; Audio — Your Name</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="site-config.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Portfolio home">
+        <span class="brand-mark" data-bind="initials">YN</span>
+        <span class="brand-name" data-bind="name">Your Name</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation" data-menu-button>Menu</button>
+      <nav class="navigation" id="navigation" aria-label="Main navigation" data-navigation>
+        <a href="index.html" data-nav>Home</a>
+        <a href="gallery.html" data-nav>Gallery</a>
+        <a href="media.html" data-nav>Video &amp; audio</a>
+      </nav>
+    </header>
+
+    <main class="page-shell" id="main">
+      <header class="page-intro">
+        <div>
+          <p class="eyebrow">Watch · Listen</p>
+          <h1>Video &amp; audio</h1>
+        </div>
+        <p class="lede">Moving-image and sound work gathered in one quiet, focused space.</p>
+      </header>
+
+      <section class="media-list" aria-label="Media projects">
+        <article class="media-project">
+          <div class="media-frame" data-video-mount>
+            <img src="assets/work-motion.webp" alt="" width="1536" height="1024">
+            <div class="empty-media">
+              <span class="play-mark" aria-hidden="true">▶</span>
+              <p>Film work arriving soon.</p>
+            </div>
+          </div>
+          <div class="media-copy">
+            <p class="eyebrow">Moving image</p>
+            <h2>Showreel</h2>
+            <p>A home for a short reel, film, animation or behind-the-scenes piece.</p>
+            <ul class="meta-list">
+              <li><span>Format</span> Video</li>
+              <li><span>Status</span> In progress</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="media-project">
+          <div class="media-frame audio-frame" data-audio-mount>
+            <img src="assets/work-rhythm.webp" alt="" loading="lazy" width="1536" height="1024">
+            <div class="empty-media">
+              <span class="play-mark" aria-hidden="true">♪</span>
+              <p>Audio work arriving soon.</p>
+            </div>
+          </div>
+          <div class="media-copy">
+            <p class="eyebrow">Sound</p>
+            <h2>Listening room</h2>
+            <p>A focused player for music, field recordings, interviews or other audio work.</p>
+            <ul class="meta-list">
+              <li><span>Format</span> Audio</li>
+              <li><span>Status</span> In progress</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-year>2026</span> <span data-bind="name">Your Name</span></p>
+      <p>Portfolio · <span data-bind="location">Ireland</span></p>
+    </footer>
+  </body>
+</html>

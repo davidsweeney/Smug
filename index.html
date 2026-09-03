@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A personal portfolio of image, video and audio work.">
+    <title>Your Name — Portfolio</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="site-config.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Portfolio home">
+        <span class="brand-mark" data-bind="initials">YN</span>
+        <span class="brand-name" data-bind="name">Your Name</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation" data-menu-button>Menu</button>
+      <nav class="navigation" id="navigation" aria-label="Main navigation" data-navigation>
+        <a href="index.html" data-nav>Home</a>
+        <a href="gallery.html" data-nav>Gallery</a>
+        <a href="media.html" data-nav>Video &amp; audio</a>
+      </nav>
+    </header>
+
+    <main class="page-shell" id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow"><span data-bind="role">Independent creative</span> · <span data-bind="location">Ireland</span></p>
+          <h1 id="hero-title">Image, sound and story.</h1>
+          <p class="lede" data-bind="statement">Images, sound and stories shaped with clarity, rhythm and intent.</p>
+        </div>
+        <figure class="hero-art">
+          <img src="assets/work-motion.webp" alt="Abstract blue and orange layered composition" width="1536" height="1024">
+          <figcaption><span>Selected work</span><span>01 — 03</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="section" aria-labelledby="selected-title">
+        <div class="section-heading">
+          <h2 id="selected-title">Selected work</h2>
+          <a class="text-link" href="gallery.html">View gallery →</a>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <a href="gallery.html#motion">
+              <img src="assets/work-motion.webp" alt="Abstract blue and orange layered composition" loading="lazy" width="1536" height="1024">
+              <div class="card-meta"><h3>Motion Study</h3><p>Image · 2026</p></div>
+            </a>
+          </article>
+          <article class="work-card">
+            <a href="gallery.html#rhythm">
+              <img src="assets/work-rhythm.webp" alt="Abstract coral arcs and ivory sound-wave forms on deep blue" loading="lazy" width="1536" height="1024">
+              <div class="card-meta"><h3>Rhythm Study</h3><p>Image · 2026</p></div>
+            </a>
+          </article>
+          <article class="work-card">
+            <a href="gallery.html#place">
+              <img src="assets/work-place.webp" alt="Abstract yellow, blue and black paper landscape" loading="lazy" width="1536" height="1024">
+              <div class="card-meta"><h3>Place Study</h3><p>Image · 2026</p></div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section media-band" aria-labelledby="media-title">
+        <img src="assets/work-rhythm.webp" alt="Abstract artwork inspired by sound and rhythm" loading="lazy" width="1536" height="1024">
+        <div>
+          <p class="eyebrow">Moving image &amp; sound</p>
+          <h2 id="media-title">Work that unfolds in time.</h2>
+          <p>A dedicated space for films, reels, recordings and audio pieces.</p>
+          <a class="text-link" href="media.html">Explore media →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-year>2026</span> <span data-bind="name">Your Name</span></p>
+      <p>Portfolio · <span data-bind="location">Ireland</span></p>
+    </footer>
+  </body>
+</html>
