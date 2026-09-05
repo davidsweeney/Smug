@@ -1,6 +1,6 @@
-# Smug.ie — the self-satisfaction edition
+# Smug.ie — the post-baby years edition
 
-A single-page satirical news feed for GitHub Pages. No build step or dependencies.
+A single-page satirical news feed about dads rediscovering free time as their children grow up. No build step or dependencies.
 
 ## Put this version live
 
