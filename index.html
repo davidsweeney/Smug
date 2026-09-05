@@ -1,84 +1,133 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Smug — images, sound and ideas in progress.">
-    <title>Smug</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
-    <script src="site-config.js" defer></script>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Smug home">
-        <span class="brand-mark" data-bind="initials">S</span>
-        <span class="brand-name" data-bind="siteName">smug.ie</span>
-      </a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="navigation" data-menu-button>Menu</button>
-      <nav class="navigation" id="navigation" aria-label="Main navigation" data-navigation>
-        <a href="index.html" data-nav>Home</a>
-        <a href="gallery.html" data-nav>Images</a>
-        <a href="media.html" data-nav>Media</a>
-      </nav>
-    </header>
-
-    <main class="page-shell" id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <div>
-          <p class="eyebrow">smug.ie</p>
-          <h1 id="hero-title">Things in progress.</h1>
-          <p class="lede" data-bind="statement">A simple space for images, sound and ideas as they develop.</p>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#681c2d">
+  <meta name="description" content="Smug.ie. Dispatches from a life going suspiciously well. Wine, teenage independence, and other causes for quiet self-congratulation.">
+  <title>Smug.ie — Rather pleased with ourselves.</title>
+  <style>
+    :root { color-scheme: light; --wine: #681c2d; --ink: #241c1e; --muted: #685b5e; --line: #d8cdd0; --paper: #fffdfb; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Georgia, 'Times New Roman', serif; }
+    a { color: inherit; text-underline-offset: .25em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid #ae6646; outline-offset: 5px; }
+    .skip { position: absolute; top: -8rem; left: 1rem; padding: 1rem; background: white; z-index: 2; }
+    .skip:focus { top: 1rem; }
+    .shell { width: min(100% - 3rem, 1000px); margin-inline: auto; }
+    .masthead { background: var(--wine); color: #fffdfb; padding: 1.1rem 0 1.7rem; }
+    .edition { display: flex; justify-content: space-between; gap: 1rem; font: .75rem/1.5 Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #ffffff50; padding-bottom: .9rem; }
+    .brand { display: block; width: fit-content; margin: .7rem auto .3rem; font-size: clamp(5rem, 15vw, 10rem); font-weight: 700; line-height: 1.05; letter-spacing: -.065em; text-decoration: none; }
+    .brand span { font-style: italic; font-weight: 400; }
+    .motto { text-align: center; font-size: 1.0625rem; font-style: italic; margin: 0; }
+    .nav { display: flex; gap: 1.75rem; justify-content: center; border-bottom: 3px double var(--wine); padding: 1rem 0; font: 700 .875rem/1.5 Arial, sans-serif; }
+    .nav a { text-decoration: none; }
+    .nav a:hover { text-decoration: underline; }
+    main { padding-top: 2.7rem; }
+    .kicker { color: var(--wine); font: 700 .75rem/1.5 Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.6rem, 5.8vw, 4.5rem); line-height: 1.06; letter-spacing: -.035em; font-weight: 400; margin: 0; max-width: 960px; text-wrap: balance; }
+    .standfirst { max-width: 790px; font-size: clamp(1.125rem, 2vw, 1.375rem); line-height: 1.5; color: var(--muted); margin: 1.15rem 0 1.5rem; }
+    .byline { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; font: .8125rem/1.5 Arial, sans-serif; color: var(--muted); border-top: 1px solid var(--line); padding-top: .85rem; margin-bottom: 1.5rem; }
+    .byline strong { color: var(--ink); }
+    figure { margin: 0; }
+    .lead-photo { display: block; width: 100%; height: auto; background: #352a23; }
+    figcaption { padding: 1.1rem 1.4rem; color: #fffdfb; background: var(--wine); font-size: 1.125rem; line-height: 1.5; font-style: italic; }
+    .story-body { max-width: 720px; margin: 1.8rem auto 3.5rem; font-size: 1.125rem; line-height: 1.75; }
+    .story-body p { margin: 0 0 1rem; }
+    .archive { border-top: 4px solid var(--wine); padding-top: 1.1rem; }
+    .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
+    .section-heading h2 { font-size: 2rem; font-weight: 400; letter-spacing: -.025em; margin: 0; }
+    .section-heading p { font: .8125rem/1.5 Arial, sans-serif; color: var(--muted); margin: 0; }
+    .dispatch { display: grid; grid-template-columns: 150px 1fr; gap: 2rem; padding: 2.2rem 0; border-bottom: 1px solid var(--line); }
+    .dispatch-meta { font: .8125rem/1.6 Arial, sans-serif; color: var(--muted); }
+    .dispatch-meta .kicker { margin-bottom: .55rem; }
+    .dispatch h3 { font-size: clamp(1.7rem, 3.5vw, 2.25rem); font-weight: 400; line-height: 1.15; letter-spacing: -.025em; margin: 0 0 1rem; }
+    .dispatch h3 a { text-decoration: none; }
+    .dispatch h3 a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+    .dispatch-content p { font-size: 1.0625rem; line-height: 1.7; margin: 0 0 .85rem; max-width: 700px; }
+    .dispatch-content p:last-child { margin-bottom: 0; }
+    footer { margin-top: 3rem; padding: 1.5rem 0 2rem; border-top: 3px double var(--wine); display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+    .footer-brand { font-size: 1.75rem; font-weight: 700; letter-spacing: -.04em; color: var(--wine); text-decoration: none; }
+    footer p { margin: 0; font: .8125rem/1.5 Arial, sans-serif; color: var(--muted); }
+    @media (max-width: 600px) {
+      .shell { width: calc(100% - 2rem); }
+      .edition { font-size: .75rem; letter-spacing: .035em; }
+      .edition span { max-width: 9rem; }
+      .edition time { text-align: right; }
+      .masthead { padding-bottom: 1.25rem; }
+      .brand { margin-top: 1rem; }
+      main { padding-top: 2rem; }
+      .nav { gap: 1.3rem; }
+      h1 { font-size: clamp(2.35rem, 9vw, 3.5rem); }
+      figcaption { padding: 1rem; font-size: 1rem; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: .35rem; }
+      .dispatch { grid-template-columns: 1fr; gap: .8rem; padding-block: 1.7rem; }
+      .dispatch-meta { display: flex; flex-wrap: wrap; gap: .35rem 1rem; }
+      .dispatch-meta .kicker { margin: 0; }
+      footer { align-items: flex-start; flex-direction: column; gap: .5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to stories</a>
+  <header class="masthead">
+    <div class="shell">
+      <div class="edition"><span>The self-satisfaction edition</span><time datetime="2026-09-05">Saturday, 5 September 2026</time></div>
+      <a class="brand" href="./" aria-label="Smug.ie home">Smug<span>.ie</span></a>
+      <p class="motto">Rather pleased with ourselves.</p>
+    </div>
+  </header>
+  <nav class="nav shell" aria-label="Stories"><a href="#latest">The latest</a><a href="#earlier">Earlier smugness</a></nav>
+  <main class="shell" id="main">
+    <!-- LATEST STORY: edit the headline, date, image and caption here. -->
+    <article id="latest" aria-labelledby="lead-title">
+      <p class="kicker">The latest / Fine living</p>
+      <h1 id="lead-title">Local man detects subtle notes of being absolutely delighted with himself</h1>
+      <p class="standfirst">A generous nose, a confident finish, and just a hint of wanting you to ask how much it cost.</p>
+      <div class="byline"><strong>By the Smug.ie desk</strong><time datetime="2026-09-05T20:15:00+01:00">5 September 2026 · 20:15 IST</time><span>1 min read · Satire</span></div>
+      <figure>
+        <img class="lead-photo" src="smug-vintage.png" width="1137" height="1383" alt="A man in a navy blazer holding a glass of red wine in a warmly lit wine bar." fetchpriority="high" decoding="async">
+        <figcaption>Local smug enjoying a 2012-2014 vintage</figcaption>
+      </figure>
+      <div class="story-body">
+        <p>A local man has confirmed that the wine is “really opening up now”, having given it several thoughtful swirls and enough time for everyone at the table to notice.</p>
+        <p>Pressed on the precise vintage, he offered the reassuringly broad assessment “2012 to 2014”, before explaining that it was less about the year and more about knowing what you like.</p>
+        <p>He knows what he likes. It is this. And being photographed liking it.</p>
+      </div>
+    </article>
+    <section class="archive" id="earlier" aria-labelledby="archive-title">
+      <div class="section-heading"><h2 id="archive-title">Earlier smugness</h2><p>More from a life going suspiciously well.</p></div>
+      <!-- EARLIER STORIES: copy an article block to add another entry. -->
+      <article class="dispatch" id="kids" aria-labelledby="kids-title">
+        <div class="dispatch-meta"><p class="kicker">Family life</p><time datetime="2026-09-04T18:30:00+01:00">4 September 2026<br>18:30 IST</time></div>
+        <div class="dispatch-content">
+          <h3 id="kids-title"><a href="#kids">“They're grand on their own now”: parents enter their most insufferable era</a></h3>
+          <p>A couple whose teenagers are finally old enough to spend an evening at home have announced that they're “getting a bit of their life back”, to friends still negotiating with a four-year-old about socks.</p>
+          <p>“We just booked a table. For eight. In the evening,” they explained, pausing between each detail to allow its significance to settle. The children reportedly celebrated with pizza, uninterrupted Wi-Fi and the equally welcome prospect of getting a bit of their house back.</p>
         </div>
-        <figure class="hero-art">
-          <img src="assets/work-motion.webp" alt="Abstract blue and orange layered composition" width="1536" height="1024">
-          <figcaption><span>Image one</span><span>01 — 03</span></figcaption>
-        </figure>
-      </section>
-
-      <section class="section" aria-labelledby="selected-title">
-        <div class="section-heading">
-          <h2 id="selected-title">Images</h2>
-          <a class="text-link" href="gallery.html">See all →</a>
+      </article>
+      <article class="dispatch" id="sourdough" aria-labelledby="bread-title">
+        <div class="dispatch-meta"><p class="kicker">At home</p><time datetime="2026-09-03T09:10:00+01:00">3 September 2026<br>09:10 IST</time></div>
+        <div class="dispatch-content">
+          <h3 id="bread-title"><a href="#sourdough">Man who makes his own bread finds way to mention it during unrelated conversation</a></h3>
+          <p>A routine discussion about parking took an unexpected turn towards fermentation yesterday, after a neighbour remarked that things had been “a bit slow”.</p>
+          <p>“That's actually what you want with a good sourdough,” came the reply. Eleven minutes later, the original parking question remained unresolved, but everyone knew the starter's name was Hugo.</p>
         </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <a href="gallery.html#motion">
-              <img src="assets/work-motion.webp" alt="Abstract blue and orange layered composition" loading="lazy" width="1536" height="1024">
-              <div class="card-meta"><h3>One</h3><p>Image</p></div>
-            </a>
-          </article>
-          <article class="work-card">
-            <a href="gallery.html#rhythm">
-              <img src="assets/work-rhythm.webp" alt="Abstract coral arcs and ivory sound-wave forms on deep blue" loading="lazy" width="1536" height="1024">
-              <div class="card-meta"><h3>Two</h3><p>Image</p></div>
-            </a>
-          </article>
-          <article class="work-card">
-            <a href="gallery.html#place">
-              <img src="assets/work-place.webp" alt="Abstract yellow, blue and black paper landscape" loading="lazy" width="1536" height="1024">
-              <div class="card-meta"><h3>Three</h3><p>Image</p></div>
-            </a>
-          </article>
+      </article>
+      <article class="dispatch" id="sea-swim" aria-labelledby="swim-title">
+        <div class="dispatch-meta"><p class="kicker">Wellbeing</p><time datetime="2026-09-02T07:45:00+01:00">2 September 2026<br>07:45 IST</time></div>
+        <div class="dispatch-content">
+          <h3 id="swim-title"><a href="#sea-swim">Sea swimmer somehow gets the sea swim into a conversation about printer ink</a></h3>
+          <p>“I don't really feel the cold any more,” a local woman told a colleague who had asked whether the office was out of cyan.</p>
+          <p>She went on to describe the light, the stillness and the lovely group of people down there. The printer remains out of cyan. Her circulation, however, has never been better.</p>
         </div>
-      </section>
-
-      <section class="section media-band" aria-labelledby="media-title">
-        <img src="assets/work-rhythm.webp" alt="Abstract artwork inspired by sound and rhythm" loading="lazy" width="1536" height="1024">
-        <div>
-          <p class="eyebrow">Media</p>
-          <h2 id="media-title">Video and sound.</h2>
-          <p>Add a film, recording or whatever comes next.</p>
-          <a class="text-link" href="media.html">Open media →</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>© <span data-year>2026</span> <span data-bind="siteName">smug.ie</span></p>
-      <p>Work in progress</p>
-    </footer>
-  </body>
+      </article>
+    </section>
+  </main>
+  <footer class="shell"><a class="footer-brand" href="#top">Smug.ie</a><p>Satire. Any resemblance to your friends is probably the point.</p></footer>
+</body>
 </html>

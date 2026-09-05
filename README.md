@@ -1,56 +1,28 @@
-# Smug starter site
+# Smug.ie — the self-satisfaction edition
 
-A small three-page site designed for GitHub Pages. It includes a responsive home page, an expandable image area, and optional slots for a YouTube/Vimeo video and an audio file.
+A single-page satirical news feed for GitHub Pages. No build step or dependencies.
 
-## Personalise it
+## Put this version live
 
-Open `site-config.js` and replace the temporary values:
+1. Unzip the download.
+2. Open https://github.com/davidsweeney/Smug in your browser.
+3. In the repository's main file list, select **Add file → Upload files**.
+4. Drag in all four files from the unzipped folder: `index.html`, `smug-vintage.png`, `CNAME`, and `README.md`. Upload the files themselves to the top level, not the enclosing folder or ZIP.
+5. Select **Commit changes**, committing to `main` if that is your Pages publishing branch.
+6. Give GitHub Pages a few minutes to publish, then open https://smug.ie.
 
-- `siteName`, `initials`, and `statement`
-- `videoUrl`: paste a YouTube, Vimeo, or direct embed URL
-- `audioSrc`: add an audio file to `assets/` and use a path such as `assets/my-track.mp3`
+The image sits beside index.html, so there is no assets folder to upload. The previous styles and scripts are no longer loaded by this page. Older gallery and media files may stay in the repository; they are not linked from the new page.
 
-Replace the three WebP files in `assets/` with your own work while keeping the filenames, or update their paths and descriptions in the HTML pages. Update the project titles and descriptions in `index.html`, `gallery.html`, and `media.html`.
+Keep your existing GitHub Pages and GoDaddy DNS settings. The CNAME file still contains smug.ie. Enable Enforce HTTPS in GitHub Pages once available.
 
-## Publish on GitHub Pages
+## Change the photo
 
-1. Open [the Smug repository](https://github.com/davidsweeney/Smug) and go to **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-3. Wait for GitHub to show the public address and test all three pages.
+The easiest option is to upload another PNG named `smug-vintage.png`, replacing this one. Alternatively, change the image's `src`, `width`, `height`, and descriptive `alt` text in index.html to match a new file.
 
-## Connect a GoDaddy `.ie` domain
+## Change the writing or add a story
 
-The included `CNAME` file sets the custom domain to `smug.ie`. For safety, confirm `smug.ie` appears in **GitHub Settings → Pages** before changing DNS in GoDaddy.
+Open index.html on GitHub and click the pencil icon. All words, dates, and styling are in that file. Comments mark the latest story and earlier stories. Copy an earlier `<article class="dispatch">...</article>` block to add an entry, give its IDs unique names, and update its text and timestamp.
 
-In GoDaddy **Domain Portfolio → your domain → DNS**, add four `A` records for the root domain:
+Dates are fixed publication dates, not a live clock. The articles and quotations are fictional satire. The supplied photograph is included unchanged.
 
-| Type | Name | Value |
-| --- | --- | --- |
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-
-Also add the recommended `www` record:
-
-| Type | Name | Value |
-| --- | --- | --- |
-| CNAME | www | `davidsweeney.github.io` |
-
-Back in GitHub **Settings → Pages**, confirm `smug.ie` as the custom domain. Once the DNS check passes, turn on **Enforce HTTPS**. DNS changes can take time to propagate.
-
-Current setup references:
-
-- [GitHub Pages custom-domain documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
-- [GoDaddy: add an A record](https://www.godaddy.com/help/add-an-a-record-19238)
-- [GoDaddy: add a CNAME record](https://www.godaddy.com/help/add-a-cname-record-19236)
-
-## Files
-
-- `index.html` — home page
-- `gallery.html` — images and lightbox
-- `media.html` — video and audio page
-- `site-config.js` — the main personal details and media links
-- `styles.css` — layout, colour, typography, and responsive behaviour
-- `script.js` — navigation, gallery, and media loading
-- `assets/` — images, favicon, and future media files
+You can preview the page locally by opening index.html after extracting all files.
