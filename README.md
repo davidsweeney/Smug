@@ -1,28 +1,17 @@
-# Smug.ie — the post-baby years edition
+# Smug.ie — coming soon
 
-A single-page satirical news feed about dads rediscovering free time as their children grow up. No build step or dependencies.
+A minimal retro landing page with generated pixel artwork and a small TASKFORCE, 2026 credit. A gentle five-second CSS screen shimmer plays once; reduced-motion preferences disable it. No JavaScript, external fonts or build tools required.
 
-## Put this version live
+## Preview
 
-1. Unzip the download.
-2. Open https://github.com/davidsweeney/Smug in your browser.
-3. In the repository's main file list, select **Add file → Upload files**.
-4. Drag in all four files from the unzipped folder: `index.html`, `smug-vintage.png`, `CNAME`, and `README.md`. Upload the files themselves to the top level, not the enclosing folder or ZIP.
-5. Select **Commit changes**, committing to `main` if that is your Pages publishing branch.
-6. Give GitHub Pages a few minutes to publish, then open https://smug.ie.
+Extract this ZIP and open index.html in your browser. Keep coming-soon.png beside it.
 
-The image sits beside index.html, so there is no assets folder to upload. The previous styles and scripts are no longer loaded by this page. Older gallery and media files may stay in the repository; they are not linked from the new page.
+## Update GitHub
 
-Keep your existing GitHub Pages and GoDaddy DNS settings. The CNAME file still contains smug.ie. Enable Enforce HTTPS in GitHub Pages once available.
+Open https://github.com/davidsweeney/Smug and select Add file → Upload files. Upload index.html, coming-soon.png, CNAME and README.md directly to the repository's main file list, then commit your changes. Upload the files themselves, not the ZIP or its enclosing folder.
 
-## Change the photo
+The new index.html replaces the news homepage. The old image and gallery/media files are no longer used here; files left in the repository can still be reached by their direct URLs. No DNS or email changes are needed.
 
-The easiest option is to upload another PNG named `smug-vintage.png`, replacing this one. Alternatively, change the image's `src`, `width`, `height`, and descriptive `alt` text in index.html to match a new file.
+## Artwork
 
-## Change the writing or add a story
-
-Open index.html on GitHub and click the pencil icon. All words, dates, and styling are in that file. Comments mark the latest story and earlier stories. Copy an earlier `<article class="dispatch">...</article>` block to add an entry, give its IDs unique names, and update its text and timestamp.
-
-Dates are fixed publication dates, not a live clock. The articles and quotations are fictional satire. The supplied photograph is included unchanged.
-
-You can preview the page locally by opening index.html after extracting all files.
+Generated using the built-in image-generation tool. Prompt: Create a finished retro 1980s home-computer pixel-art title screen for smug.ie. Square image, midnight navy background, crisp chunky visible pixels with limited 16-colour palette, restrained cyan, hot pink and buttery yellow highlights. Centered large highly legible bitmap lettering exactly "SMUG.IE", with smaller bitmap lettering exactly "COMING SOON" underneath. Modest pixel stars in spacious dark background, small striped sunset and low wireframe horizon near bottom. Charming authentic 8-bit game loading screen, minimalist, generous negative space, no photographed monitor, no device, no buttons, no extra words, no watermark. Flat standalone artwork ready to place on a dark webpage.
